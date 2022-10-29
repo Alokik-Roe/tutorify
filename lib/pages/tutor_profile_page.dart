@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:tutorify/widgets/navigation_bar.dart';
+import 'package:tutorify/pages/footer.dart';
 
 class TutorProfilePage extends StatelessWidget{
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tutorify/pages/desktop/home_page.dart';
-import 'package:tutorify/pages/desktop/tutor_list_page.dart';
-import 'package:tutorify/pages/desktop/tutor_profile_page.dart';
+import 'package:tutorify/pages/home_page.dart';
+import 'package:tutorify/pages/tutor_list_page.dart';
+import 'package:tutorify/pages/tutor_profile_page.dart';
 
 import 'routes.dart';
 

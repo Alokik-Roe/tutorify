@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:tutorify/pages/desktop/home_page.dart';
-import 'package:tutorify/pages/desktop/tutor_list_page.dart';
+import 'package:tutorify/pages/home_page.dart';
+import 'package:tutorify/pages/tutor_list_page.dart';
 import 'package:tutorify/widgets/navigation_item.dart';
 
 class NavBar extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build//Get dimensions
-    final screenWidth = MediaQuery.of(context).size.width/1440;
+    final screenWidth = MediaQuery.of(context).size.width / 1440;
     return Positioned(
-      top: 0,
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(110*screenWidth, 57, 110*screenWidth, 0),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
+        top: 0,
+        child: Padding(
+            padding: EdgeInsets.fromLTRB(
+                110 * screenWidth, 57, 110 * screenWidth, 0),
+            child: Column(
               children: [
-                Text(
-                  "Tutorify",
-                  style: TextStyle(
-                    fontSize: 18*screenWidth,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Tutorify",
+                      style: TextStyle(
+                        fontSize: 18*screenWidth,
                     fontFamily: 'Poppins',
                     fontStyle: FontStyle.normal,
                     fontWeight: FontWeight.w700,

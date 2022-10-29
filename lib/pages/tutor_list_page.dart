@@ -1,32 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:get/get.dart';
-import 'package:tutorify/pages/desktop/footer.dart';
-import 'package:tutorify/pages/desktop/tutor_profile_page.dart';
-import 'package:tutorify/routing/router_generator.dart';
-import 'package:tutorify/routing/routes.dart';
-import 'package:tutorify/widgets/navigation_item.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:hexcolor/hexcolor.dart';
+import 'package:tutorify/pages/footer.dart';
+import 'package:tutorify/pages/tutor_profile_page.dart';
 
 class TutorListPage extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
-
     //Get dimensions
-    final screenWidth = MediaQuery.of(context).size.width/1440;
-
-
+    final screenWidth = MediaQuery.of(context).size.width / 1440;
 
     // TODO: implement build
     return Scaffold(
         backgroundColor: Colors.white,
-        body:SizedBox(
+        body: SizedBox(
             height: double.maxFinite,
             width: double.maxFinite,
-
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
