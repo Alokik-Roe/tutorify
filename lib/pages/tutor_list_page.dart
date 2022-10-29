@@ -249,6 +249,7 @@ class Card1 extends StatelessWidget {
               Icon(
                 Icons.play_circle_fill,
                 color: Colors.black,
+                size: 20 * screenWidth,
               ),
               SizedBox(
                 width: 10 * screenWidth,
@@ -303,26 +304,31 @@ class Card1 extends StatelessWidget {
                     Icon(
                       Icons.star,
                       color: HexColor("#FB9C46"),
+                      size: 20 * screenWidth,
                     ),
                     SizedBox(width: 5 * screenWidth),
                     Icon(
                       Icons.star,
                       color: HexColor("#FB9C46"),
+                      size: 20 * screenWidth,
                     ),
                     SizedBox(width: 5 * screenWidth),
                     Icon(
                       Icons.star,
                       color: HexColor("#FB9C46"),
+                      size: 20 * screenWidth,
                     ),
                     SizedBox(width: 5 * screenWidth),
                     Icon(
                       Icons.star,
                       color: HexColor("#FB9C46"),
+                      size: 20 * screenWidth,
                     ),
                     SizedBox(width: 5 * screenWidth),
                     Icon(
                       Icons.star,
                       color: HexColor("#FB9C46"),
+                      size: 20 * screenWidth,
                     ),
                   ],
                 ),
@@ -439,6 +445,7 @@ class Card1 extends StatelessWidget {
                     Icon(
                       Icons.person,
                       color: HexColor("#FB9C46"),
+                      size: 20 * screenWidth,
                     ),
                     SizedBox(width: 5 * screenWidth),
                     Text(

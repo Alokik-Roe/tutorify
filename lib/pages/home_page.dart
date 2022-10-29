@@ -540,6 +540,8 @@ class Mobile extends StatelessWidget {
         .width / 375;
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(),
+      drawer: Drawer(),
       body: SizedBox(
           width: double.maxFinite,
           child: SingleChildScrollView(
@@ -549,7 +551,9 @@ class Mobile extends StatelessWidget {
                 Container(
                   alignment: Alignment.topLeft,
                   padding: EdgeInsets.only(
-                      left: 29 * screenWidth, top: 29 * screenWidth),
+                      left: 29 * screenWidth,
+                      right: 29 * screenWidth,
+                      top: 29 * screenWidth),
                   // width: screenWidth*656,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

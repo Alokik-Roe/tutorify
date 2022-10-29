@@ -14,7 +14,10 @@ class DesktopView extends StatelessWidget{
         body: Column(
         children: [
           NavBar(),
-          Expanded(child: child),
+          Expanded(
+            child: child,
+            flex: 80,
+          ),
         ],
 
       ),
