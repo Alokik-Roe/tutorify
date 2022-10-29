@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:textfield_search/textfield_search.dart';
 import 'package:tutorify/pages/footer.dart';
 import 'package:tutorify/pages/tutor_profile_page.dart';
 
@@ -12,6 +13,14 @@ class TutorListPage extends StatefulWidget {
     return TutorListState();
   }
 }
+
+const List<String> dummyList = [
+  'high to low price',
+  'low to high price',
+  'Rating',
+  'Popularity',
+  'No. of lessons'
+];
 
 class TutorListState extends State<TutorListPage> {
   @override
@@ -35,6 +44,38 @@ class TutorListDesktop extends StatelessWidget {
     // TODO: implement build
     final screenWidth = MediaQuery.of(context).size.width / 1440;
 
+    const NameList = [
+      "Ty Ayelloribbin",
+      "Hugo First",
+      "Percy Vere",
+      "Jack Aranda",
+      "Olive Tree",
+      "Fran G. Pani",
+      "John Quil",
+      "Ev R. Lasting",
+      "Anne Thurium",
+      "Cherry Blossom",
+      "Glad I. Oli",
+      "Ginger Plant",
+      "Del Phineum",
+      "Rose Bush",
+      "Perry Scope",
+      "Frank N. Stein",
+      "Roy L. Commishun",
+      "Pat Thettick",
+      "Percy Kewshun",
+      "Rod Knee",
+      "Hank R. Cheef",
+      "Bridget Theriveaquai",
+      "Pat N. Toffis",
+      "Karen Onnabit",
+      "Col Fays",
+      "Fay Daway",
+      "Joe V. Awl",
+      "Wes Yabinlatelee",
+    ];
+
+    TextEditingController myController = TextEditingController();
     return Scaffold(
         backgroundColor: Colors.white,
         body: SizedBox(
@@ -76,8 +117,12 @@ class TutorListDesktop extends StatelessWidget {
                                     size: 20 * screenWidth,
                                   ),
                                   SizedBox(
-                                    width: 20 * screenWidth,
-                                  ),
+                                      width: 500 * screenWidth,
+                                      height: 40 * screenWidth,
+                                      child: TextFieldSearch(
+                                          initialList: NameList,
+                                          label: "Search Tutor",
+                                          controller: myController)),
                                   ElevatedButton(
                                     onPressed: () {
                                       // TODO: Search
@@ -138,14 +183,10 @@ class TutorListDesktop extends StatelessWidget {
                                   size: 20 * screenWidth,
                                 ),
                                 Container(
-                                  width: 250 * screenWidth,
-                                  child: Text("JELEL"),
+                                  width: 300 * screenWidth,
+                                  alignment: Alignment.centerRight,
+                                  child: DropDown(),
                                 ),
-                                Icon(
-                                  Icons.arrow_drop_down_sharp,
-                                  color: HexColor("CCCCCC"),
-                                  size: 20 * screenWidth,
-                                )
                               ],
                             ),
                           ),
@@ -261,6 +302,45 @@ class TutorListMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width / 375;
     // TODO: implement build
+    TextEditingController myController = TextEditingController();
+
+    const dummyList = [
+      'high to low price',
+      'low to high price',
+      'Rating',
+      'Popularity',
+      'No. of lessons'
+    ];
+    const NameList = [
+      "Ty Ayelloribbin",
+      "Hugo First",
+      "Percy Vere",
+      "Jack Aranda",
+      "Olive Tree",
+      "Fran G. Pani",
+      "John Quil",
+      "Ev R. Lasting",
+      "Anne Thurium",
+      "Cherry Blossom",
+      "Glad I. Oli",
+      "Ginger Plant",
+      "Del Phineum",
+      "Rose Bush",
+      "Perry Scope",
+      "Frank N. Stein",
+      "Roy L. Commishun",
+      "Pat Thettick",
+      "Percy Kewshun",
+      "Rod Knee",
+      "Hank R. Cheef",
+      "Bridget Theriveaquai",
+      "Pat N. Toffis",
+      "Karen Onnabit",
+      "Col Fays",
+      "Fay Daway",
+      "Joe V. Awl",
+      "Wes Yabinlatelee",
+    ];
     return Scaffold(
         backgroundColor: Colors.white,
         body: Container(
@@ -293,8 +373,12 @@ class TutorListMobile extends StatelessWidget {
                             size: 20 * screenWidth,
                           ),
                           SizedBox(
-                            width: 20 * screenWidth,
-                          ),
+                              width: 260 * screenWidth,
+                              height: 40 * screenWidth,
+                              child: TextFieldSearch(
+                                  initialList: NameList,
+                                  label: "Search Tutor",
+                                  controller: myController)),
                         ],
                       ),
                     )),
@@ -350,13 +434,8 @@ class TutorListMobile extends StatelessWidget {
                                 size: 20 * screenWidth,
                               ),
                               Container(
-                                width: 70 * screenWidth,
-                                child: Text("JELEL"),
-                              ),
-                              Icon(
-                                Icons.arrow_drop_down_sharp,
-                                color: HexColor("CCCCCC"),
-                                size: 20 * screenWidth,
+                                width: 100 * screenWidth,
+                                child: DropDown(),
                               )
                             ],
                           ),
@@ -439,8 +518,7 @@ class Card1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Get dimensions
-    final screenWidth = MediaQuery.of(context).size.width/1440;
-
+    final screenWidth = MediaQuery.of(context).size.width / 1440;
 
     // TODO: implement build
     return Card(
@@ -1074,28 +1152,51 @@ class Card3 extends StatelessWidget {
   }
 }
 
-class CustomSearchDelegate extends SearchDelegate {
+class DropDown extends StatefulWidget {
   @override
-  List<Widget>? buildActions(BuildContext context) {
-    // TODO: implement buildActions
-    throw UnimplementedError();
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return DropDownStae();
   }
+}
+
+class DropDownStae extends State<DropDown> {
+  String dropdownValue = dummyList.first;
 
   @override
-  Widget? buildLeading(BuildContext context) {
-    // TODO: implement buildLeading
-    throw UnimplementedError();
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    // TODO: implement buildResults
-    throw UnimplementedError();
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    // TODO: implement buildSuggestions
-    throw UnimplementedError();
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      width: double.maxFinite,
+      child: DropdownButton<String>(
+        value: dropdownValue,
+        icon: Icon(
+          Icons.arrow_drop_down_sharp,
+          color: HexColor("CCCCCC"),
+          size: 25,
+        ),
+        elevation: 16,
+        style: const TextStyle(color: Colors.black),
+        underline: Container(
+          height: 2,
+          color: HexColor("CCCCCC"),
+        ),
+        isExpanded: true,
+        alignment: AlignmentDirectional.bottomCenter,
+        hint: Text("Sort"),
+        onChanged: (String? value) {
+          // This is called when the user selects an item.
+          setState(() {
+            dropdownValue = value!;
+          });
+        },
+        items: dummyList.map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+      ),
+    );
   }
 }
