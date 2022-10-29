@@ -33,6 +33,7 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+  material_floating_search_bar: ^0.3.7
   cupertino_icons: ^1.0.2
   hexcolor: ^2.0.7
   google_fonts: ^3.0.1
@@ -78,6 +79,7 @@ flutter:
     - assets/profile2.jpg
     - assets/profile3.jpg
     - assets/profile4.jpg
+    - assets/buttons.jpg
 
   #   - images/a_dot_ham.jpeg
 

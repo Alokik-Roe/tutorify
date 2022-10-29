@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tutorify/pages/home_page.dart';
 import 'package:tutorify/pages/tutor_list_page.dart';
-import 'package:tutorify/pages/tutor_profile_page.dart';
 
 import 'routes.dart';
 
@@ -19,11 +18,11 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => TutorListProfile());
         break;*/
       // case routeTutorListSch:
-    //       //   // return MaterialPageRoute(builder: (_) => TutorListSch());
-    //       //   break;
-      case routeTutorProfile:
-        return MaterialPageRoute(builder: (_) => TutorProfilePage());
-        break;
+      //       //   // return MaterialPageRoute(builder: (_) => TutorListSch());
+      //       //   break;
+      //   case routeTutorProfile:
+      //     return MaterialPageRoute(builder: (_) => TutorProfilePage());
+      //     break;
       default:
         return _errorRoute(settings.name);
     }

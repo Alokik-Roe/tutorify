@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -43,6 +44,126 @@ class TutorListDesktop extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(
+                    height: 50 * screenWidth,
+                  ),
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 110 * screenWidth),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Card(
+                            color: Colors.white,
+                            elevation: 18 * screenWidth,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.circular(8.0 * screenWidth)),
+                            child: Container(
+                              width: 800 * screenWidth,
+                              height: 60 * screenWidth,
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 10 * screenWidth,
+                                  horizontal: 30 * screenWidth),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.search,
+                                    color: HexColor("CCCCCC"),
+                                    size: 20 * screenWidth,
+                                  ),
+                                  SizedBox(
+                                    width: 20 * screenWidth,
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      // TODO: Search
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      // backgroundColor: HexColor("#253428"),
+                                      primary: HexColor("058E6E"),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 50 * screenWidth,
+                                          vertical: 18 * screenWidth),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0)),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Icon(
+                                          Icons.search,
+                                          color: Colors.white,
+                                          size: 20 * screenWidth,
+                                        ),
+                                        Text(
+                                          "Search",
+                                          style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontStyle: FontStyle.normal,
+                                            fontSize: 14 * screenWidth,
+                                            color: Colors.white,
+                                            height: 1 * screenWidth,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )),
+                        Card(
+                          color: Colors.white,
+                          elevation: 18 * screenWidth,
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.circular(8.0 * screenWidth)),
+                          child: Container(
+                            width: 357 * screenWidth,
+                            height: 60 * screenWidth,
+                            padding: EdgeInsets.symmetric(
+                                vertical: 10 * screenWidth,
+                                horizontal: 10 * screenWidth),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Icon(
+                                  Icons.remove_red_eye,
+                                  color: HexColor("CCCCCC"),
+                                  size: 20 * screenWidth,
+                                ),
+                                Container(
+                                  width: 250 * screenWidth,
+                                  child: Text("JELEL"),
+                                ),
+                                Icon(
+                                  Icons.arrow_drop_down_sharp,
+                                  color: HexColor("CCCCCC"),
+                                  size: 20 * screenWidth,
+                                )
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20 * screenWidth,
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 90 * screenWidth),
+                    child: Image.asset(
+                      "assets/buttons.jpg",
+                      fit: BoxFit.fitWidth,
+                      width: 1230 * screenWidth,
+                    ),
+                  ),
                   Container(
                     width: double.maxFinite,
                     padding: EdgeInsets.only(
@@ -148,6 +269,102 @@ class TutorListMobile extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                SizedBox(
+                  height: 10 * screenWidth,
+                ),
+                Card(
+                    color: Colors.white,
+                    elevation: 24 * screenWidth,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0 * screenWidth)),
+                    child: Container(
+                      width: 325 * screenWidth,
+                      height: 60 * screenWidth,
+                      padding: EdgeInsets.symmetric(
+                          vertical: 10 * screenWidth,
+                          horizontal: 20 * screenWidth),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.search,
+                            color: HexColor("CCCCCC"),
+                            size: 20 * screenWidth,
+                          ),
+                          SizedBox(
+                            width: 20 * screenWidth,
+                          ),
+                        ],
+                      ),
+                    )),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 29 * screenWidth, vertical: 10 * screenWidth),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          // TODO: Search
+                        },
+                        style: ElevatedButton.styleFrom(
+                          // backgroundColor: HexColor("#253428"),
+                          primary: HexColor("#FB9C46"),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50 * screenWidth,
+                              vertical: 18 * screenWidth),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0)),
+                        ),
+                        child: Text(
+                          "Search",
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontStyle: FontStyle.normal,
+                            fontSize: 14 * screenWidth,
+                            color: Colors.white,
+                            height: 1 * screenWidth,
+                          ),
+                        ),
+                      ),
+                      Card(
+                        color: Colors.white,
+                        elevation: 24 * screenWidth,
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(8.0 * screenWidth)),
+                        child: Container(
+                          width: 152 * screenWidth,
+                          height: 46 * screenWidth,
+                          padding: EdgeInsets.symmetric(
+                              vertical: 10 * screenWidth,
+                              horizontal: 10 * screenWidth),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Icon(
+                                Icons.remove_red_eye,
+                                color: HexColor("CCCCCC"),
+                                size: 20 * screenWidth,
+                              ),
+                              Container(
+                                width: 70 * screenWidth,
+                                child: Text("JELEL"),
+                              ),
+                              Icon(
+                                Icons.arrow_drop_down_sharp,
+                                color: HexColor("CCCCCC"),
+                                size: 20 * screenWidth,
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
                 Container(
                   margin: EdgeInsets.only(
                       left: 29 * screenWidth, right: 29 * screenWidth),
@@ -223,7 +440,6 @@ class Card1 extends StatelessWidget {
   Widget build(BuildContext context) {
     //Get dimensions
     final screenWidth = MediaQuery.of(context).size.width/1440;
-
 
 
     // TODO: implement build
@@ -855,5 +1071,31 @@ class Card3 extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class CustomSearchDelegate extends SearchDelegate {
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    // TODO: implement buildActions
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    // TODO: implement buildLeading
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // TODO: implement buildResults
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    // TODO: implement buildSuggestions
+    throw UnimplementedError();
   }
 }
