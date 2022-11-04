@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tutorify/views/view.dart';
-import 'package:tutorify/views/mobile_view.dart';
 import 'package:get/get.dart';
 import 'routing/router_generator.dart';
 import 'routing/routes.dart';

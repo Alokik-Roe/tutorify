@@ -540,8 +540,6 @@ class Mobile extends StatelessWidget {
         .width / 375;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(),
-      drawer: Drawer(),
       body: SizedBox(
           width: double.maxFinite,
           child: SingleChildScrollView(

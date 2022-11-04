@@ -4,6 +4,15 @@ import 'package:tutorify/pages/home_page.dart';
 import 'package:tutorify/pages/tutor_list_page.dart';
 import 'package:tutorify/widgets/navigation_item.dart';
 
+
+const List<String> dummyList = [
+  'high to low price',
+  'low to high price',
+  'Rating',
+  'Popularity',
+  'No. of lessons'
+];
+
 class NavBar extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -22,9 +31,7 @@ class NavBarState extends State<NavBar> {
     if (screenWidth > 715) {
       return NavBarDesktop();
     } else {
-      return Container(
-        color: Colors.white,
-      );
+      return NavBarMobile();
     }
     return null!;
   }
@@ -34,7 +41,53 @@ class NavBarMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw UnimplementedError();
+    final screenWidth = MediaQuery
+        .of(context)
+        .size
+        .width / 375;
+
+    return Container(
+      padding: EdgeInsets.only(
+          left: 29 * screenWidth,
+          top: 29 * screenWidth,
+          right: 29 * screenWidth),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Tutorify",
+                style: TextStyle(
+                  fontSize: 18 * screenWidth,
+                  fontFamily: 'Poppins',
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w700,
+                  color: HexColor("#393939"),
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+
+                },
+                icon: Icon(
+                  Icons.menu_rounded,
+                  size: 24 * screenWidth,
+                ),
+                color: HexColor("FB9C46"),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 14 * screenWidth,
+          ),
+          Divider(
+            thickness: 1,
+            color: HexColor("#C4C4C4"),
+          )
+        ],
+      ),
+    );
   }
 }
 
@@ -62,11 +115,8 @@ class NavBarDesktop extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                         color: HexColor("#393939"),
                       ),
-
                     ),
-                    Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
+                    Row(mainAxisSize: MainAxisSize.min, children: [
                       NavigationItem(
                           title: "Home", routeName: HomePage(), index: 0),
                       SizedBox(
@@ -101,7 +151,7 @@ class NavBarDesktop extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0)),
                         ),
-                            child: Text(
+                        child: Text(
                           "Log In",
                           style: TextStyle(
                             fontFamily: 'Poppins',
@@ -128,22 +178,18 @@ class NavBarDesktop extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0)),
                         ),
-                            child: Text(
-                              "Sign Up",
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
                             fontStyle: FontStyle.normal,
                             fontWeight: FontWeight.w600,
                             fontSize: 16 * screenWidth,
                             color: Colors.white,
                           ),
-                            ),
-                          ),
-
-
-                        ]
-                    ),
-
+                        ),
+                      ),
+                    ]),
                   ],
                 ),
                 Divider(
@@ -152,8 +198,56 @@ class NavBarDesktop extends StatelessWidget {
                   height: 60,
                 )
               ],
-            )
-        )
+            )));
+  }
+}
+
+
+class DropDown extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return DropDownStae();
+  }
+}
+
+class DropDownStae extends State<DropDown> {
+  String dropdownValue = dummyList.first;
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      width: double.maxFinite,
+      child: DropdownButton<String>(
+        value: dropdownValue,
+        icon: Icon(
+          Icons.arrow_drop_down_sharp,
+          color: HexColor("CCCCCC"),
+          size: 25,
+        ),
+        elevation: 16,
+        style: const TextStyle(color: Colors.black),
+        underline: Container(
+          height: 2,
+          color: HexColor("CCCCCC"),
+        ),
+        isExpanded: true,
+        alignment: AlignmentDirectional.bottomCenter,
+        hint: Text("Sort"),
+        onChanged: (String? value) {
+          // This is called when the user selects an item.
+          setState(() {
+            dropdownValue = value!;
+          });
+        },
+        items: dummyList.map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+      ),
     );
   }
 }

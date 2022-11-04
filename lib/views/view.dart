@@ -16,7 +16,6 @@ class DesktopView extends StatelessWidget{
           NavBar(),
           Expanded(
             child: child,
-            flex: 80,
           ),
         ],
 
